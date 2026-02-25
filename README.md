@@ -69,7 +69,7 @@ Results displayed through web interface
 
 Clone the repository:
 
-git clone https://github.com/YOUR_USERNAME/smart-waste-ai.git
+git clone https://github.com/Shravanvn97/smart-waste-ai.git
 cd smart-waste-ai
 
 Install dependencies:
@@ -114,5 +114,3 @@ This project demonstrates how artificial intelligence can automate waste classif
 👨‍💻 Author
 
 Shravan V N
-
-Final Year Engineering Project
