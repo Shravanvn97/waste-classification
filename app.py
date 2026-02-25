@@ -12,47 +12,288 @@ st.set_page_config(page_title="Smart Waste AI", layout="wide")
 st.markdown("""
 <style>
 
+/* ===== GLOBAL TEXT STYLING ===== */
+/* Premium Background */
 .stApp {
-    background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-    color: white;
+    background: linear-gradient(135deg, #0a0e27 0%, #1a1a3a 25%, #2d1b3d 50%, #1a1a2e 75%, #0f0f1e 100%);
+    color: #e8e8e8;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Sidebar */
+/* All text elements - Light color */
+body, p, span, div, label, a {
+    color: #e8e8e8 !important;
+}
+
+/* Paragraph text */
+p {
+    color: #d9d9d9 !important;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Links */
+a {
+    color: #a89968 !important;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #d4af37 !important;
+}
+
+/* ===== SIDEBAR ===== */
+/* Premium Sidebar */
 section[data-testid="stSidebar"] {
-    background: linear-gradient(180deg,#000428,#004e92);
-    border-right: 2px solid cyan;
-    box-shadow: 0 0 20px cyan;
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    border-right: 3px solid #d4af37;
+    box-shadow: inset -10px 0 30px rgba(212, 175, 55, 0.1);
 }
 
-/* Menu title */
+/* Sidebar text - Light color */
+section[data-testid="stSidebar"] p,
+section[data-testid="stSidebar"] span,
+section[data-testid="stSidebar"] div {
+    color: #d9d9d9 !important;
+}
+
+/* Menu title - Elegant Gold */
 .menu-title {
-    font-size: 22px;
-    font-weight: bold;
-    color: cyan;
-    text-shadow: 0 0 12px cyan;
-    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #d4af37 !important;
+    text-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+    margin-bottom: 25px;
+    letter-spacing: 1px;
 }
 
-/* Radio labels */
+/* ===== RADIO BUTTONS ===== */
+/* Radio labels - Premium */
 .stRadio label {
-    font-size: 18px !important;
-    color: #e0f7ff !important;
-    padding: 10px;
-    border-radius: 10px;
-    transition: all 0.3s ease;
+    font-size: 16px !important;
+    color: #c9c9c9 !important;
+    padding: 12px 16px !important;
+    border-radius: 8px !important;
+    transition: all 0.4s ease !important;
+    font-weight: 500 !important;
+    border-left: 3px solid transparent !important;
 }
 
-/* Hover glow */
+/* Hover effect - Elegant */
 .stRadio label:hover {
-    background: rgba(0,255,255,0.2);
-    box-shadow: 0 0 10px cyan;
+    background: rgba(212, 175, 55, 0.15) !important;
+    border-left: 3px solid #d4af37 !important;
+    color: #d4af37 !important;
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2) !important;
 }
 
-/* Selected glow */
+/* Selected state - Premium Gold */
 input[type="radio"]:checked + div {
-    background: rgba(0,255,255,0.3);
-    border-left: 4px solid cyan;
-    box-shadow: 0 0 10px cyan;
+    background: rgba(212, 175, 55, 0.25) !important;
+    border-left: 3px solid #d4af37 !important;
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3) !important;
+}
+
+/* ===== HEADINGS ===== */
+h1, h2, h3, h4, h5, h6 {
+    color: #d4af37 !important;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h1 { font-size: 28px; }
+h2 { font-size: 24px; }
+h3 { font-size: 20px; }
+
+/* ===== BUTTONS ===== */
+.stButton > button {
+    background: linear-gradient(135deg, #d4af37, #e5c158);
+    color: #1a1a2e !important;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.stButton > button:hover {
+    background: linear-gradient(135deg, #e5c158, #d4af37);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+    transform: translateY(-2px);
+}
+
+/* ===== FILE UPLOADER ===== */
+.stFileUploader {
+    border: 2px dashed #d4af37;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.stFileUploader label {
+    color: #d9d9d9 !important;
+    font-weight: 500;
+}
+
+/* ===== METRICS ===== */
+.stMetric {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.05));
+    border-left: 4px solid #d4af37;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Metric labels and values - Light */
+.stMetric label,
+.stMetric div {
+    color: #d9d9d9 !important;
+}
+
+.metric-label {
+    color: #c9c9c9 !important;
+}
+
+.metric-value {
+    color: #d4af37 !important;
+    font-weight: 600;
+}
+
+/* ===== INFO/SUCCESS/WARNING BOXES ===== */
+.stInfo, .stSuccess, .stWarning, .stError {
+    border-radius: 8px;
+}
+
+.stInfo {
+    background: linear-gradient(90deg, rgba(79, 172, 254, 0.15), transparent);
+    border-left: 4px solid #4facfe;
+}
+
+.stInfo p, .stInfo span {
+    color: #b3e5fc !important;
+}
+
+.stSuccess {
+    background: linear-gradient(90deg, rgba(76, 212, 139, 0.15), transparent);
+    border-left: 4px solid #4cd48b;
+}
+
+.stSuccess p, .stSuccess span {
+    color: #a8e6d3 !important;
+}
+
+.stWarning {
+    background: linear-gradient(90deg, rgba(255, 193, 7, 0.15), transparent);
+    border-left: 4px solid #ffc107;
+}
+
+.stWarning p, .stWarning span {
+    color: #ffe082 !important;
+}
+
+.stError {
+    background: linear-gradient(90deg, rgba(244, 67, 54, 0.15), transparent);
+    border-left: 4px solid #f44336;
+}
+
+.stError p, .stError span {
+    color: #ef9a9a !important;
+}
+
+/* ===== TEXT INPUTS & SELECTS ===== */
+.stTextInput > div > div > input,
+.stNumberInput > div > div > input,
+.stSelectbox > div > div > select,
+.stTextArea > div > div > textarea {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid #d4af37 !important;
+    color: #e8e8e8 !important;
+    border-radius: 6px;
+}
+
+.stTextInput > div > div > input::placeholder,
+.stNumberInput > div > div > input::placeholder,
+.stTextArea > div > div > textarea::placeholder {
+    color: #888888 !important;
+}
+
+.stTextInput > div > div > input:focus,
+.stNumberInput > div > div > input:focus,
+.stSelectbox > div > div > select:focus,
+.stTextArea > div > div > textarea:focus {
+    border: 2px solid #d4af37 !important;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3) !important;
+}
+
+/* Input labels */
+.stTextInput label,
+.stNumberInput label,
+.stSelectbox label,
+.stTextArea label {
+    color: #d9d9d9 !important;
+    font-weight: 500;
+}
+
+/* ===== CHECKBOX & OTHER INPUTS ===== */
+.stCheckbox label {
+    color: #d9d9d9 !important;
+    font-size: 16px !important;
+}
+
+.stCheckbox label:hover {
+    color: #d4af37 !important;
+}
+
+/* ===== DIVIDERS ===== */
+hr {
+    border: 0;
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
+    margin: 30px 0;
+}
+
+/* ===== IMAGE CONTAINERS ===== */
+.stImage {
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== CODE BLOCKS ===== */
+code {
+    background: rgba(212, 175, 55, 0.1);
+    color: #90ee90 !important;
+    border-radius: 4px;
+    padding: 2px 6px;
+}
+
+/* ===== TABS ===== */
+.stTabs [role="tablist"] button {
+    color: #d9d9d9 !important;
+}
+
+.stTabs [role="tablist"] button[aria-selected="true"] {
+    color: #d4af37 !important;
+    border-bottom: 3px solid #d4af37;
+}
+
+.stTabs [role="tablist"] button:hover {
+    color: #d4af37 !important;
+}
+
+/* ===== COLUMN LABELS ===== */
+.stColumn label, .stColumn span {
+    color: #d9d9d9 !important;
+}
+
+/* ===== EXPANDER ===== */
+.stExpander summary {
+    color: #d9d9d9 !important;
+    font-weight: 600;
+}
+
+.stExpander summary:hover {
+    color: #d4af37 !important;
 }
 
 </style>
