@@ -69,7 +69,7 @@ Results displayed through web interface
 
 Clone the repository:
 
-git clone https://github.com/Shravanvn97/smart-waste-ai.git
+git clone https://github.com/Shravanvn97/waste-classification.git
 cd smart-waste-ai
 
 Install dependencies:
